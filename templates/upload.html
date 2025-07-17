@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload GitHub Repo</title>
+</head>
+<body>
+    <h2>🔐 GitHub Repo Scanner</h2>
+
+    {% if message %}
+        <p style="color:green;">{{ message }}</p>
+        <p><strong>Repo:</strong> {{ repo_url }}</p>
+        <p><strong>Token:</strong> {{ token }}</p>
+    {% endif %}
+
+    <form method="post" action="/submit">
+        <label>Repo URL:</label><br>
+        <input type="text" name="repo_url" required><br><br>
+
+        <label>GitHub Token:</label><br>
+        <input type="password" name="token" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
